@@ -64,7 +64,7 @@ def password_strength_report(uppercase_count, digit_count, special_count, length
         missing_strengths.append("a special character")
     
     if missing_strengths:
-        print(f"Your password '{password}' is missing the following elements to be strong: {', '.join(missing_strengths)}.")
+        print(f"Your password '{password}' is missing the following elements to be very strong: {', '.join(missing_strengths)}.")
     else:
         print(f"Congratulations! Your password '{password}' is very strong.")
 
