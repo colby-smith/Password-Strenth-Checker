@@ -23,7 +23,7 @@ def check_length(password):
         raise Exception ("Password cannot contain more than 32 characters")
     if len(password) < 8:
         raise Exception ("Password cannot contain less than 8 characters")
-    if len(password) <= 16:
+    if len(password) >= 16:
         length_strength += 1
     return (length_strength)
         
@@ -53,31 +53,20 @@ def check_special_count(password):
     
 def password_strength_report(uppercase_count, digit_count, special_count, length_strength, password): #very weak #weak #normal #strong #very strong
     password_strength = uppercase_count + digit_count + special_count + length_strength
-    if password_strength == 0:
-        print (f" Your password: '{password}' is very Weak.")
-    if password_strength == 1:
-        print (f" Your password: '{password}' is Weak.")
-    if password_strength == 2:
-        print (f" Your password: '{password}' is normal.\n")
-    if password_strength == 3:
-        print (f" Your password: '{password}' is strong, great job but you \n"
-               f" can still do better.")
-    if password_strength == 4:
-        print (f" Your password: '{password}' is very strong, great job!")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    missing_strengths = []
+    if length_strength == 0:
+        missing_strengths.append("length (should be at least 16 characters)")
+    if uppercase_count == 0:
+        missing_strengths.append("contain an uppercase character")
+    if digit_count == 0:
+        missing_strengths.append("a digit")
+    if special_count == 0:
+        missing_strengths.append("a special character")
+    
+    if missing_strengths:
+        print(f"Your password '{password}' is missing the following elements to be strong: {', '.join(missing_strengths)}.")
+    else:
+        print(f"Congratulations! Your password '{password}' is very strong.")
 
 
 
