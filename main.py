@@ -69,12 +69,4 @@ def password_strength_report(uppercase_count, digit_count, special_count, length
         print(f"Congratulations! Your password '{password}' is very strong.")
 
 
-
-
-
-
-
-
-
-
 main()
