@@ -1,6 +1,6 @@
 # Password-Strenth-Checker
 ## About
-A simple program that takes the input of a users password and outputs improvements, if any, it can make. Utilising constant variables, basic python arithmatic and built in functions, as well as boolean logic.
+A simple program that takes the input of a users password and outputs improvements, if any, it can make. Utilising constant variables, basic python arithmatic and functions, as well as error logic.
 
 ## Prerequisites
 To use this program effectivly make sure you have installed:
