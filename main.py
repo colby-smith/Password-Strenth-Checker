@@ -1,5 +1,6 @@
 MAX_PASSWORD_LENGTH = 32
 MIN_PASSWORD_LENGTH = 8
+REQUIRED_PASSWORD_LENGTH = 16
 SPECIAL_CHARACTERS = "!@#$%^&*()-+?_=,<>/"
 
 def main():
@@ -27,7 +28,7 @@ def check_length(password):
         raise Exception ("Password cannot contain more than 32 characters")
     if len(password) < MIN_PASSWORD_LENGTH:
         raise Exception ("Password cannot contain less than 8 characters")
-    if len(password) >= 16:
+    if len(password) >= REQUIRED_PASSWORD_LENGTH:
         length_strength += 1
     return (length_strength)
         
