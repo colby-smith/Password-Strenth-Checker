@@ -1,14 +1,16 @@
 MAX_PASSWORD_LENGTH = 32
 MIN_PASSWORD_LENGTH = 8
-REQUIRED_PASSWORD_LENGTH = 16
-SPECIAL_CHARACTERS = "!@#$%^&*()-+?_=,<>/"
+REQUIRED_PASSWORD_LENGTH = 12
+SPECIAL_CHARACTERS = "!@#$%^&*()-+?_=,<>/ "
 
 def main():
-    password_path = "passwords/password.txt"
-    password = get_password(password_path)
-    print ("-----------------Password Strength Checker-----------------")
+    # password_path = Input()"passwords/password.txt"
+    password = input("please enter your password: ")
+    print ("------------------------Password Strength Checker------------------------")
+    print (" ")
     password_strength_report(password)
-    print ("-----------------------------------------------------------")
+    print (" ")
+    print ("-------------------------------------------------------------------------")
 
 def get_password(password_path):
     with open (password_path) as password:
