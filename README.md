@@ -1,23 +1,23 @@
 # Password-Strenth-Checker
 ## About
-A simple program that takes the input of a users password and outputs improvements, if any, it can make. Utilising constant variables, basic python arithmatic and functions, as well as error logic.
+A simple program that takes the input of a user's password and outputs improvements, if any, it can make. Utilising constant variables, basic Python arithmetic and functions, as well as error logic.
 
 ## Prerequisites
-To use this program effectivly make sure you have installed:
+To use this program effectively make sure you have installed:
 * Python 3.12.2
 * bash or zsh
 
 ## Installing python 3.12.2
 If you're on Linux, there are some dependencies you'll need before installing pyenv. Run these commands to install them:
 
-1. Only run these if you're using a linux sytem.
+1. Only run these if you're using a Linux System.
 ```
 sudo apt update
 sudo apt install -y build-essential zlib1g-dev libssl-dev
 sudo apt install -y libreadline-dev libbz2-dev libsqlite3-dev libffi-dev
 
 ```
-2. Run this to instal pyenv with webi.
+2. Run this to install pyenv with webi.
 ```
 curl -sS https://webi.sh/pyenv | sh
 ```
@@ -25,7 +25,7 @@ curl -sS https://webi.sh/pyenv | sh
 ```
 code ~/.bashrc
 ```
-If you're using Mac.
+If you're using a Mac.
 ```
 code ~/.zshrc
 ```
