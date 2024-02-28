@@ -6,16 +6,8 @@ SPECIAL_CHARACTERS = "!@#$%^&*()-+?_=,<>/"
 def main():
     password_path = "passwords/password.txt"
     password = get_password(password_path)
-    most_common_passwords = ['qwerty', 'password', 'qwerty123', 'aa12345678', 'abc123', 'password1', 'qwertyuiop', 'password123']
-    length_strength = check_length(password)
-    uppercase_count = check_capitalisation_count(password)
-    digit_count = check_digit_count(password)
-    special_count = check_special_count(password)
-    print (" ")
     print ("-----------------Password Strength Checker-----------------")
-    print (" ")
-    password_strength_report(uppercase_count, digit_count, special_count, length_strength, password)
-    print (" ")
+    password_strength_report(password)
     print ("-----------------------------------------------------------")
 
 def get_password(password_path):
@@ -32,30 +24,15 @@ def check_length(password):
         length_strength += 1
     return (length_strength)
         
-        
-def check_capitalisation_count(password):
-    uppercase_count = 0
-    for char in password:
-        if char.isupper():
-            uppercase_count += 1
-    return (uppercase_count)
-        
-def check_digit_count(password):
-    digit_count = 0
-    for char in password:
-        if char.isdigit():
-            digit_count += 1
-    return (digit_count)
-
-def check_special_count(password):
-    special_count = 0
-    for char in password:
-        if char in SPECIAL_CHARACTERS:
-            special_count += 1
-    return (special_count)
-        
+def check_password_strength(password):
+    uppercase_count = sum(1 for char in password if char.isupper())
+    digit_count = sum(1 for char in password if char.isdigit())
+    special_count = sum(1 for char in password if char in SPECIAL_CHARACTERS)
+    length_strength = 1 if check_length(password) else 0
+    return uppercase_count, digit_count, special_count, length_strength
     
-def password_strength_report(uppercase_count, digit_count, special_count, length_strength, password): #very weak #weak #normal #strong #very strong
+def password_strength_report(password): #very weak #weak #normal #strong #very strong
+    uppercase_count, digit_count, special_count, length_strength = check_password_strength(password)
     password_strength = uppercase_count + digit_count + special_count + length_strength
     missing_strengths = []
     if length_strength == 0:
