@@ -44,10 +44,6 @@ To use this simple tool simply follow the instructions below:
 
 1. Change into the repository directory in your shell.
 
-2. Create a folder called **passwords**.
+2. Run the program by typing **python main.py** and hitting enter, if an error occurs run **python3 main.py** instead.
 
-3. Create a .txt file called **password**.
-
-4. Save the changes using *ctrl+S* for windows and *command+S* on mac.
-
-5. Finally run the program by typing **python main.py** and hitting enter, if an error occurs run **python3 main.py** instead.
+3. Finally, follow the prompts on screen.
