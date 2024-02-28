@@ -1,3 +1,7 @@
+MAX_PASSWORD_LENGTH = 32
+MIN_PASSWORD_LENGTH = 8
+SPECIAL_CHARACTERS = "!@#$%^&*()-+?_=,<>/"
+
 def main():
     password_path = "passwords/password.txt"
     password = get_password(password_path)
@@ -19,9 +23,9 @@ def get_password(password_path):
 
 def check_length(password):
     length_strength = 0
-    if len(password) > 32:
+    if len(password) > MAX_PASSWORD_LENGTH:
         raise Exception ("Password cannot contain more than 32 characters")
-    if len(password) < 8:
+    if len(password) < MIN_PASSWORD_LENGTH:
         raise Exception ("Password cannot contain less than 8 characters")
     if len(password) >= 16:
         length_strength += 1
@@ -43,10 +47,9 @@ def check_digit_count(password):
     return (digit_count)
 
 def check_special_count(password):
-    special_characters = "!@#$%^&*()-+?_=,<>/"
     special_count = 0
     for char in password:
-        if char in special_characters:
+        if char in SPECIAL_CHARACTERS:
             special_count += 1
     return (special_count)
         
