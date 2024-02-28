@@ -15,7 +15,6 @@ If you're on Linux, there are some dependencies you'll need before installing py
 sudo apt update
 sudo apt install -y build-essential zlib1g-dev libssl-dev
 sudo apt install -y libreadline-dev libbz2-dev libsqlite3-dev libffi-dev
-
 ```
 2. Run this to install pyenv with webi.
 ```
